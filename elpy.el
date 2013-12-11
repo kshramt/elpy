@@ -1189,6 +1189,7 @@ This is usually an error or backtrace."
 Returns immediately. When a result is available, SUCCESS will be
 called with that value as its sole argument. If an error occurs,
 ERROR is called, if set."
+  (message "elpy-rpc--call(%S, ...)" method-name)
   (let ((orig-buf (current-buffer)))
     (with-current-buffer (elpy-rpc--get-rpc-buffer)
       (setq elpy-rpc--call-id (1+ elpy-rpc--call-id))
