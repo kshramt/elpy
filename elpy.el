@@ -1443,7 +1443,8 @@ This will call Python in the background and initialize
            (push (cons (concat ac-prefix name)
                        doc)
                  elpy--ac-cache))))
-     (ac-start))
+     (when elpy--ac-cache
+       (ac-start)))
    (lambda (err)
      (message "Can't get completions: %s" err))))
 
